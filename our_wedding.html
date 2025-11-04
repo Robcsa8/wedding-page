@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tárnoky Szilvia &amp; Noll Róbert — 2026. július 31.</title>
+  <meta name="description" content="Esküvő - Ludwig Hotel Martonvásár, 2026.07.31. Információk, helyszín, RSVP"> 
+  <style>
+    :root{--bg:#f7f7fb;--card:#ffffff;--accent:#6b5be6;--muted:#6b6b80;--radius:14px}
+    *{box-sizing:border-box}
+    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial; margin:0;background:linear-gradient(180deg,var(--bg),#ffffff);color:#222}
+    .container{max-width:980px;margin:36px auto;padding:20px}
+    header.hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center}
+    .card{background:var(--card);border-radius:var(--radius);padding:26px;box-shadow:0 6px 30px rgba(99,95,200,0.08)}
+    .title{display:flex;gap:18px;align-items:center}
+    .title .names{font-size:28px;font-weight:700}
+    .title .date{color:var(--muted);font-size:14px}
+    .hero-grid{display:grid;grid-template-columns:320px 1fr;gap:22px}
+    .photo{height:500px;width: 320px; border-radius:12px;background:linear-gradient(135deg,#e9e7ff,#fff);display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .photo img{width:100%;height:100%;object-fit:cover}
+    .lead{color:var(--muted);line-height:1.5}
+    .section{margin-top:18px}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .info-grid{display:grid;gap:10px}
+    .label{font-size:13px;color:var(--muted);margin-bottom:6px}
+    .btn{display:inline-block;padding:10px 16px;border:none;border-radius:12px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;transition:all 0.2s ease;}
+    .btn:hover {background:#584ae0;transform:translateY(-2px);box-shadow:0 4px 12px rgba(107,91,230,0.25);}
+    form.rsvp{display:grid;gap:10px}
+    input[type="text"],input[type="email"],select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6f0}
+    textarea{min-height:90px}
+    .row{display:flex;gap:10px}
+    .row > *{flex:1}
+    footer{margin-top:26px;text-align:center;color:var(--muted);font-size:13px}
+    @media(max-width:820px){.hero-grid{grid-template-columns:1fr}.photo{height:220px}.two-col{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header class="hero card">
+      <div class="title">
+        <div>
+          <div class="names">Tárnoky Szilvia &amp; Noll Róbert</div>
+          <div class="date">2026. július 31. — Ludwig Hotel, Martonvásár</div>
+        </div>
+        <div style="margin-left:auto;text-align:right">
+          <a class="btn" href="#rsvp">Visszajelzek</a>
+        </div>
+      </div>
+
+      <div class="hero-grid" style="margin-top:8px">
+        <div class="photo" aria-hidden="true">
+          <!-- Helyőrző kép -->
+          <img src="./mi.jpeg" alt="Mi">
+        </div>
+        <div>
+          <p class="lead">Kedves Barátaink és Családunk!<br>
+          Örömmel várunk Titeket, hogy együtt ünnepeljük életünk egyik legfontosabb napját. A lagzi helyszíne a Ludwig Hotel Martonvásár, ahol szeretnénk megosztani Veletek a boldogságunkat, vacsorát és jó zenét garantálva.</p>
+
+          <div class="section two-col">
+            <div class="card info-grid">
+              <div><div class="label">Ceremónia</div><div><strong>15:00</strong> — Martonvásári kastélykert (szabadtér)</div></div>
+              <div><div class="label">Fogadás &amp; Vacsora</div><div><strong>17:00</strong> — Ludwig Hotel, rendezvényterem</div></div>
+              <div><div class="label">Dress code</div><div>Elegáns / cocktail</div></div>
+              <div><div class="label">Parkolás</div><div>A hotel parkolója rendelkezésre áll</div></div>
+            </div>
+
+            <div class="card info-grid">
+              <div><div class="label">Szállás</div><div>Ajánlott a Ludwig Hotel szállását előre lefoglalni</div></div>
+              <div><div class="label">Ajándéktippek</div><div>Szeretettel várjuk jelenléteteket — ha mégis ajándékot hoznátok, küldünk ötleteket emailben.</div></div>
+              <div><div class="label">Kapcsolat</div><div>Elérhetőség: A számunkat tudjátok :)</div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <section class="section card" id="rsvp">
+      <h3>Visszajelzés</h3>
+      <p class="label">Kérjük töltsd ki az alábbi űrlapot, hogy tudjuk, számíthatunk‑e Rád!</p>
+
+      <form class="rsvp" onsubmit="return handleRSVP(event)">
+        <div class="row">
+          <input type="text" id="guestName" placeholder="Teljes név *" required>
+          <input type="email" id="guestEmail" placeholder="E-mail (opcionális)">
+        </div>
+        <div class="row">
+          <select id="coming" required>
+            <option value="">Jelöld, hogy jössz-e</option>
+            <option value="Igen">Igen, részt veszek</option>
+            <option value="Nem">Sajnos nem tudok jönni</option>
+            <option value="Talán">Még bizonytalan</option>
+          </select>
+          <input type="text" id="guestsCount" placeholder="Hozok vendéget? (szám)" pattern="[0-9]*">
+        </div>
+        <textarea id="message" placeholder="Üzenet / ételallergia / megjegyzés (opcionális)"></textarea>
+        <div style="display:flex;gap:10px;align-items:center">
+          <button class="btn" type="submit">Elküldöm a visszajelzést</button>
+        </div>
+        <div id="rsvpMsg" style="color:green;margin-top:8px;display:none"></div>
+      </form>
+    </section>
+
+    <section class="section card">
+      <h3>Program &amp; hasznos információk</h3>
+
+      <div class="section">
+        <h4>Menü</h4>
+        <div class="card" style="background:#fafaff">
+          <ul style="list-style:none;padding-left:0;line-height:1.6;margin:0">
+            <li><strong>Előétel:</strong> Libamájpástétom és tatárbeefsteak ropogós paillasse kenyeren</li>
+            <li><strong>Leves:</strong> Újházi tyúkhúsleves gazdagon, csigatésztával, Sakura meggyleves</li>
+            <li><strong>Főétel:</strong> Vegyes bőségtál: kijevi jércemell, narancsos-whiskey-s vasalt csirkecombfilé, cordon bleu, Für Elise hústekercs, rántott sajt</li>
+            <li><strong>Köretek:</strong> Parázsburgonya, hagymás törtburgonya, rizs, kevert saláta, görögsaláta, savanyúság, tartármártás</li>
+            <li><strong>Vegetáriánus opció:</strong> Rántott sajt</li>
+            <li><strong>Desszert:</strong> Esküvői torta és süteményválogatás</li>
+            <li><strong>Italok:</strong> Limonádé, gyümölcslevek, mentes és bubis víz, szénsavas üditők, espresso, capuccino, borok(fehér-rozé-vörös), Vandál sörök: Brunszvik Pils és Sakura meggyes-cseresznyés ale</li>
+          </ul>
+          <p style="margin-top:10px;color:var(--muted)"><em>Éjféli étel: mini hamburger</em></p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h4>Helyszín</h4>
+        <div class="card" style="overflow:hidden">
+          <iframe
+            src="https://www.google.com/maps?q=Ludwig+Hotel+Martonv%C3%A1s%C3%A1r&output=embed"
+            width="100%"
+            height="320"
+            style="border:0;border-radius:12px"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <small>Sziszi & Robcsa wedding 2026</small>
+    </footer>
+  </main>
+
+  <script>
+    function handleRSVP(e){
+      e.preventDefault();
+      const name = document.getElementById('guestName').value.trim();
+      const email = document.getElementById('guestEmail').value.trim();
+      const coming = document.getElementById('coming').value;
+      const guests = document.getElementById('guestsCount').value.trim() || '0';
+      const msg = document.getElementById('message').value.trim();
+
+      if(!name || !coming){
+        alert('Kérjük add meg a neved és a részvételi szándékot.');
+        return false;
+      }
+
+      // mailto fallback:
+      const organizer = 'szisziandrobcsawedding@gmail.com';
+      const subject = encodeURIComponent('Esküvői visszajelzés: ' + name);
+      const bodyLines = [
+        'Név: ' + name,
+        'E-mail: ' + (email || '-'),
+        'Részvétel: ' + coming,
+        'Kísérők száma: ' + guests,
+        'Üzenet / allergia: ' + (msg || '-'),
+      ];
+      const body = encodeURIComponent(bodyLines.join('\n'));
+
+      window.location.href = `mailto:${organizer}?subject=${subject}&body=${body}`;
+
+      const okMsg = document.getElementById('rsvpMsg');
+      okMsg.style.display = 'block';
+      okMsg.textContent = 'Köszönjük a visszajelzést! (Az üzenet elküldéséhez használd az email klienst.)';
+      setTimeout(()=>{okMsg.style.display='none'},6000);
+      return false;
+    }
+  </script>
+</body>
+</html>
